@@ -1,0 +1,17 @@
+﻿@model TextField
+@{ 
+    ViewBag.Title = Model.Title;
+}
+
+<div class="container py-5">
+    @Html.Raw(Model.Text)
+</div>
+<script>
+    function classchange() {
+        //document.getElementById('link0').classList.add('active');
+        document.getElementById('link1').classList.remove('active');
+        document.getElementById('link2').classList.remove('active');
+        document.getElementById('link3').classList.remove('active');
+    }
+    classchange();
+</script>
