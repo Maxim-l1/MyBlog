@@ -9,7 +9,6 @@ using MyBlog.Models;
 
 namespace MyBlog.Controllers
 {
-    [Authorize]
     public class AccountController : Controller
     {
         //переменные для оперирования пользователями
@@ -22,7 +21,6 @@ namespace MyBlog.Controllers
             signInManager = signInMgr;
         }
 
-        [AllowAnonymous]
         public IActionResult Login(string returnUrl)
         {
             ViewBag.isAut = HttpContext.User.Identity.IsAuthenticated;
@@ -32,7 +30,6 @@ namespace MyBlog.Controllers
         }
 
         [HttpPost]
-        [AllowAnonymous]
         public async Task<IActionResult> Login(LoginViewModel model, string returnUrl)
         {
             if (ModelState.IsValid)
